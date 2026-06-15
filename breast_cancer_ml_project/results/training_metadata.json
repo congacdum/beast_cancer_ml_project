@@ -1,0 +1,158 @@
+{
+  "dataset": "data/breast_cancer_wisconsin.csv",
+  "target_column": "diagnosis",
+  "target_mapping": {
+    "Benign": 0,
+    "Malignant": 1
+  },
+  "test_size": 0.2,
+  "random_state": 42,
+  "stratify": true,
+  "best_model": "Random Forest",
+  "selection_rule": "highest Recall (M), then lowest FN, then F1-score (M), then ROC-AUC, then Accuracy, then simpler/more interpretable model",
+  "selection_reason": "Random Forest was selected by the medical-priority rule: Recall (M)=0.9286, FN=3, F1-score (M)=0.9630, ROC-AUC=0.9954, Accuracy=0.9737. Recall for Malignant is prioritized because False Negative cases are more dangerous than False Positive cases in breast cancer screening.",
+  "cross_validation_note": "Cross-validation is run on the training split only for stability review. The final saved model is selected from the untouched hold-out table by the fixed medical-first rule.",
+  "best_model_metrics": {
+    "Accuracy": 0.9736842105263158,
+    "Precision (M)": 1.0,
+    "Recall (M)": 0.9285714285714286,
+    "F1-score (M)": 0.9629629629629629,
+    "Specificity (B)": 1.0,
+    "MCC": 0.9441549509633318,
+    "ROC-AUC": 0.9953703703703705,
+    "PR-AUC": 0.9928768608892835,
+    "TN": 72,
+    "FP": 0,
+    "FN": 3,
+    "TP": 39
+  },
+  "decision_threshold": 0.3,
+  "decision_threshold_source": "training_split",
+  "saved_files": {
+    "best_model": "models/best_model.joblib",
+    "feature_names": "models/feature_names.joblib",
+    "label_mapping": "models/label_mapping.joblib",
+    "decision_threshold": "models/decision_threshold.joblib",
+    "model_logistic_regression": "models/logistic_regression.joblib",
+    "model_decision_tree": "models/decision_tree.joblib",
+    "model_random_forest": "models/random_forest.joblib",
+    "model_svm": "models/svm.joblib",
+    "model_knn": "models/knn.joblib",
+    "model_naive_bayes": "models/naive_bayes.joblib"
+  },
+  "reports": {
+    "model_comparison_csv": "reports/model_comparison.csv",
+    "model_comparison_md": "reports/model_comparison.md",
+    "cross_validation_csv": "reports/cross_validation_results.csv",
+    "cross_validation_md": "reports/cross_validation_results.md",
+    "tuning_csv": "reports/hyperparameter_tuning_results.csv",
+    "tuning_md": "reports/hyperparameter_tuning_results.md",
+    "threshold_csv": "reports/threshold_optimization.csv",
+    "threshold_md": "reports/threshold_optimization.md",
+    "data_quality_json": "reports/data_quality_report.json",
+    "data_quality_html": "reports/data_quality_report.html",
+    "explainability_md": "reports/model_explainability.md"
+  },
+  "figures": [
+    "reports/figures/confusion_matrix_logistic_regression.png",
+    "reports/figures/roc_curve_logistic_regression.png",
+    "reports/figures/confusion_matrix_decision_tree.png",
+    "reports/figures/roc_curve_decision_tree.png",
+    "reports/figures/confusion_matrix_random_forest.png",
+    "reports/figures/roc_curve_random_forest.png",
+    "reports/figures/confusion_matrix_svm.png",
+    "reports/figures/roc_curve_svm.png",
+    "reports/figures/confusion_matrix_knn.png",
+    "reports/figures/roc_curve_knn.png",
+    "reports/figures/confusion_matrix_naive_bayes.png",
+    "reports/figures/roc_curve_naive_bayes.png",
+    "reports/figures/threshold_optimization.png",
+    "reports/figures/feature_importance.png",
+    "reports/figures/shap_summary.png",
+    "reports/figures/target_distribution.png",
+    "reports/figures/correlation_heatmap.png",
+    "reports/figures/confusion_matrix_best_model.png",
+    "reports/figures/model_metric_comparison.png",
+    "reports/figures/roc_curve.png",
+    "reports/figures/decision_tree.png"
+  ],
+  "figure_errors": [],
+  "explainability": {
+    "model": "Random Forest",
+    "shap_summary_created": true,
+    "top_features": [
+      {
+        "feature": "worst perimeter",
+        "importance": 0.14755774988719983
+      },
+      {
+        "feature": "worst area",
+        "importance": 0.1436633873497779
+      },
+      {
+        "feature": "worst concave points",
+        "importance": 0.11566707947941944
+      },
+      {
+        "feature": "mean concave points",
+        "importance": 0.08856722740289283
+      },
+      {
+        "feature": "worst radius",
+        "importance": 0.08691684640313427
+      },
+      {
+        "feature": "mean radius",
+        "importance": 0.06269058379548578
+      },
+      {
+        "feature": "mean perimeter",
+        "importance": 0.05454393553648551
+      },
+      {
+        "feature": "mean area",
+        "importance": 0.042733560457098675
+      },
+      {
+        "feature": "mean concavity",
+        "importance": 0.03974676430913227
+      },
+      {
+        "feature": "worst concavity",
+        "importance": 0.031314874068472304
+      },
+      {
+        "feature": "area error",
+        "importance": 0.029990581601623847
+      },
+      {
+        "feature": "mean compactness",
+        "importance": 0.017781960811624295
+      },
+      {
+        "feature": "worst texture",
+        "importance": 0.01650612951764541
+      },
+      {
+        "feature": "worst compactness",
+        "importance": 0.014800774503628425
+      },
+      {
+        "feature": "radius error",
+        "importance": 0.013115552630370267
+      }
+    ],
+    "figure_paths": [
+      "D:/Học tập/Học phần/Năm hai/Kì 2/Học máy/Bài tập lớn/breast_cancer_ml_project/reports/figures/feature_importance.png",
+      "D:/Học tập/Học phần/Năm hai/Kì 2/Học máy/Bài tập lớn/breast_cancer_ml_project/reports/figures/shap_summary.png"
+    ],
+    "errors": [],
+    "example_prediction_explanation": "For an example test record, influential global features include: worst perimeter=83.7400, worst area=510.5000, worst concave points=0.0896, mean concave points=0.0262, worst radius=12.8200.",
+    "medical_note": "Explanations support inspection only and do not replace clinical judgment."
+  },
+  "label_mapping": {
+    "0": "benign",
+    "1": "malignant"
+  },
+  "note": "The model is for educational diagnosis support only, not a medical device."
+}

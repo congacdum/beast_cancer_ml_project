@@ -1,0 +1,48 @@
+from pathlib import Path
+
+ROOT_DIR = Path(__file__).resolve().parent
+DATA_DIR = ROOT_DIR / "data"
+MODEL_DIR = ROOT_DIR / "models"
+REPORT_DIR = ROOT_DIR / "reports"
+FIGURE_DIR = REPORT_DIR / "figures"
+ASSET_DIR = ROOT_DIR / "assets"
+
+DATA_FILE = DATA_DIR / "breast_cancer_wisconsin.csv"
+PREDICTION_TEMPLATE_FILE = ASSET_DIR / "breast_cancer_template.xlsx"
+DEMO_PATIENTS_FILE = ASSET_DIR / "demo_patients.xlsx"
+BEST_MODEL_FILE = MODEL_DIR / "best_model.joblib"
+FEATURE_NAMES_FILE = MODEL_DIR / "feature_names.joblib"
+LABEL_MAPPING_FILE = MODEL_DIR / "label_mapping.joblib"
+MODEL_COMPARISON_FILE = REPORT_DIR / "model_comparison.csv"
+MODEL_COMPARISON_MD_FILE = REPORT_DIR / "model_comparison.md"
+DATA_QUALITY_REPORT_FILE = REPORT_DIR / "data_quality_report.json"
+DATA_QUALITY_HTML_FILE = REPORT_DIR / "data_quality_report.html"
+DATA_QUALITY_FLAGS_FILE = REPORT_DIR / "data_quality_flags.csv"
+BEST_MODEL_SUMMARY_FILE = REPORT_DIR / "best_model_summary.md"
+EXPERIMENT_SUMMARY_FILE = REPORT_DIR / "experiment_summary.md"
+FINAL_SUMMARY_FILE = REPORT_DIR / "final_summary.md"
+CV_RESULTS_FILE = REPORT_DIR / "cross_validation_results.csv"
+CV_RESULTS_MD_FILE = REPORT_DIR / "cross_validation_results.md"
+TUNING_RESULTS_FILE = REPORT_DIR / "hyperparameter_tuning_results.csv"
+TUNING_RESULTS_MD_FILE = REPORT_DIR / "hyperparameter_tuning_results.md"
+THRESHOLD_RESULTS_FILE = REPORT_DIR / "threshold_optimization.csv"
+THRESHOLD_RESULTS_MD_FILE = REPORT_DIR / "threshold_optimization.md"
+EXPLAINABILITY_REPORT_FILE = REPORT_DIR / "model_explainability.md"
+DECISION_TREE_RULES_FILE = REPORT_DIR / "decision_tree_rules.txt"
+DECISION_TREE_FIGURE_FILE = FIGURE_DIR / "decision_tree.png"
+TARGET_DISTRIBUTION_FIGURE_FILE = FIGURE_DIR / "target_distribution.png"
+CORRELATION_HEATMAP_FIGURE_FILE = FIGURE_DIR / "correlation_heatmap.png"
+BEST_MODEL_CONFUSION_MATRIX_FILE = FIGURE_DIR / "confusion_matrix_best_model.png"
+METRIC_COMPARISON_FIGURE_FILE = FIGURE_DIR / "model_metric_comparison.png"
+ROC_CURVE_FIGURE_FILE = FIGURE_DIR / "roc_curve.png"
+THRESHOLD_FIGURE_FILE = FIGURE_DIR / "threshold_optimization.png"
+SHAP_SUMMARY_FIGURE_FILE = FIGURE_DIR / "shap_summary.png"
+FEATURE_IMPORTANCE_FIGURE_FILE = FIGURE_DIR / "feature_importance.png"
+TRAINING_METADATA_FILE = REPORT_DIR / "training_metadata.json"
+DECISION_THRESHOLD_FILE = MODEL_DIR / "decision_threshold.joblib"
+
+RANDOM_STATE = 42
+TEST_SIZE = 0.2
+TARGET_COL = "diagnosis"
+POSITIVE_CLASS = "malignant"
+TARGET_CANDIDATES = ("diagnosis", "target", "label", "class", "y")

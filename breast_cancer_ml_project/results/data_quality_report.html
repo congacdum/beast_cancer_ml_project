@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Data Quality Report</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 32px; color: #222; }
+    h1, h2 { color: #17324d; }
+    table { border-collapse: collapse; width: 100%; margin: 12px 0 24px; }
+    th, td { border: 1px solid #d0d7de; padding: 8px; text-align: left; }
+    th { background: #f6f8fa; }
+    .score { font-size: 28px; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <h1>Data Quality Report</h1>
+  <p class="score">Quality score: 85/100</p>
+  <h2>Dataset Summary</h2>
+  <ul>
+    <li>Rows: 569</li>
+    <li>Columns: 31</li>
+    <li>Target column: diagnosis</li>
+    <li>Duplicate rows: 0</li>
+    <li>Suspected outliers: 172</li>
+  </ul>
+  <h2>Missing Values</h2>
+  <table><thead><tr><th>column</th><th>missing_count</th><th>missing_percent</th></tr></thead><tbody><tr><td>None</td><td>0</td><td>0.0</td></tr></tbody></table>
+  <h2>Class Balance</h2>
+  <pre>{&#x27;counts&#x27;: {&#x27;0&#x27;: 357, &#x27;1&#x27;: 212}, &#x27;ratios&#x27;: {&#x27;0&#x27;: 0.6274165202108963, &#x27;1&#x27;: 0.37258347978910367}, &#x27;minority_class&#x27;: &#x27;1&#x27;, &#x27;majority_class&#x27;: &#x27;0&#x27;, &#x27;minority_ratio&#x27;: 0.37258347978910367, &#x27;imbalance_detected&#x27;: False, &#x27;suggestions&#x27;: [&#x27;Class distribution is not severely imbalanced in the current dataset.&#x27;]}</pre>
+  <h2>Highly Correlated Feature Pairs</h2>
+  <table><thead><tr><th>feature_1</th><th>feature_2</th><th>abs_correlation</th></tr></thead><tbody><tr><td>mean radius</td><td>mean perimeter</td><td>0.9978552814938109</td></tr><tr><td>mean radius</td><td>mean area</td><td>0.9873571700566127</td></tr><tr><td>mean perimeter</td><td>mean area</td><td>0.9865068039913907</td></tr><tr><td>radius error</td><td>perimeter error</td><td>0.9727936770160764</td></tr><tr><td>radius error</td><td>area error</td><td>0.951830112110991</td></tr><tr><td>mean radius</td><td>worst radius</td><td>0.9695389726112055</td></tr><tr><td>mean perimeter</td><td>worst radius</td><td>0.9694763634663146</td></tr><tr><td>mean area</td><td>worst radius</td><td>0.9627460860470841</td></tr><tr><td>mean radius</td><td>worst perimeter</td><td>0.9651365139559871</td></tr><tr><td>mean perimeter</td><td>worst perimeter</td><td>0.9703868870426394</td></tr><tr><td>mean area</td><td>worst perimeter</td><td>0.9591195743552645</td></tr><tr><td>worst radius</td><td>worst perimeter</td><td>0.993707916102949</td></tr><tr><td>mean area</td><td>worst area</td><td>0.9592133256498998</td></tr><tr><td>worst radius</td><td>worst area</td><td>0.9840145644590742</td></tr><tr><td>worst perimeter</td><td>worst area</td><td>0.9775780914063871</td></tr></tbody></table>
+  <h2>Policy</h2>
+  <p>Outliers and highly correlated features are reported only; they are not removed automatically.</p>
+</body>
+</html>
