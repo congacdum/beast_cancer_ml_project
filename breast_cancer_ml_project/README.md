@@ -440,60 +440,6 @@ Các dependencies nằm trong `requirements.txt`:
 | `openpyxl` | Đọc/ghi XLSX cho template, upload và export |
 | `pytest` | Automated tests |
 
-## Xử Lý Lỗi Thường Gặp
-
-### `ModuleNotFoundError`
-
-Cài lại dependencies từ project root:
-
-```powershell
-python -m pip install -r requirements.txt
-```
-
-Nên chạy các lệnh từ thư mục root của project để local imports hoạt động đúng.
-
-### Streamlit không tìm thấy model
-
-Hãy chạy training trước:
-
-```powershell
-python src/train.py
-```
-
-Sau đó khởi động lại Streamlit:
-
-```powershell
-python -m streamlit run app.py
-```
-
-### Thiếu reports
-
-Chạy training pipeline. Các đường dẫn output được quản lý trong `config.py` và
-sẽ được tạo tự động.
-
-```powershell
-python src/train.py
-```
-
-### PowerShell không activate được virtual environment
-
-Dùng policy bypass trong phạm vi process hiện tại:
-
-```powershell
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-.\.venv\Scripts\activate
-```
-
-### SHAP không khả dụng
-
-Cài lại dependencies:
-
-```powershell
-python -m pip install -r requirements.txt
-```
-
-Nếu SHAP vẫn không chạy được trong môi trường hiện tại, training vẫn tiếp tục
-và dùng feature importance làm fallback.
 
 ## Hạn Chế
 
